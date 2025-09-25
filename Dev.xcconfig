@@ -1,0 +1,11 @@
+//
+//  Dev.xcconfig
+//  VintageLens
+//
+//  Created by Amr Omran on 24.09.25.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+BASE_URL = http:/$()/0.0.0.0:8080/api/v1

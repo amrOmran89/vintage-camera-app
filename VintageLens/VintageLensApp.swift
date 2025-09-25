@@ -9,9 +9,43 @@ import SwiftUI
 
 @main
 struct VintageLensApp: App {
+    
+    @State private var discoveryCoordinator = DiscoverCoordinator()
+    @State private var authentication = AuthenticationService()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                Tab("Discover", systemImage: "house") {
+                    NavigationStack(path: $discoveryCoordinator.path) {
+                        DiscoverView()
+                            .navigationDestination(for: DiscoverCoordinator.Screens.self) { screen in
+                                discoveryCoordinator.goToView(screen)
+                            }
+                    }
+                    .environment(discoveryCoordinator)
+                }
+                
+                Tab("Favorites", systemImage: "heart") {
+                    FavoriteView()
+                }
+                
+                Tab("Sell", systemImage: "tag") {
+                    SellView()
+                }
+                
+                Tab("Account", systemImage: "person") {
+                    ProfileView()
+                }
+                
+                Tab(role: .search) {
+                    NavigationStack {
+                        SearchView()
+                    }
+                }
+            }
+            .tabViewStyle(.tabBarOnly)
+            .environment(authentication)
         }
     }
 }
