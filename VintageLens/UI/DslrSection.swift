@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct DslrSection: View {
-    let dslr: DSLRResponse
+    
+    @Environment(DiscoverCoordinator.self) var coordinator
+    
+    let dslr: CameraSection
     
     var body: some View {
         Group {
@@ -21,6 +24,9 @@ struct DslrSection: View {
                 LazyHStack(spacing: 10) {
                     ForEach(dslr.items) { dslr in
                         DSLRCardView(dslr: dslr)
+                            .onTapGesture {
+                                coordinator.push(.details(dslr))
+                            }
                     }
                 }
                 .scrollTargetLayout()

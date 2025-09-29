@@ -88,10 +88,10 @@ struct DiscoverView: View {
 @Observable
 class DiscoverViewModel {
     
-    var vintage: VintageResponse?
+    var vintage: CameraSection?
     var topBrands: BrandResponse?
     var lenses: LensesResponse?
-    var dslr: DSLRResponse?
+    var dslr: CameraSection?
     var error: Error?
     
     func tryAgain() {
@@ -105,7 +105,7 @@ class DiscoverViewModel {
     
     func getVintageList() async {
         do {
-            let result = try await VintageApiClient(client: ApiClient()).getVintageShortList()
+            let result = try await VintageApiClient(client: ApiClient()).getVintageSection()
             vintage = result
             self.error = nil
         } catch {

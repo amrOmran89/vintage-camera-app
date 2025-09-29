@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct VintageCardView: View {
-    let vintage: Vintage
+    let vintage: Camera
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {

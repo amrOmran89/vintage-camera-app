@@ -39,7 +39,7 @@ struct VintageOverview: View {
 @Observable
 class VintageOverviewViewModel {
     
-    var vintageList = [Vintage]()
+    var vintageList = [Camera]()
     var error: Error?
 
     

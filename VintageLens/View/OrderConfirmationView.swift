@@ -11,7 +11,7 @@ import SwiftUI
 struct OrderConfirmationView: View {
     @Environment(DiscoverCoordinator.self) private var coordinator
     
-    let camera: Vintage
+    let camera: Camera
 
     let orderNumber = "ORD123456"
     let quantity = 1
@@ -59,7 +59,7 @@ struct OrderConfirmationView: View {
                 HStack {
                     Text("Total Price:")
                     Spacer()
-                    Text(camera.price, format: .currency(code: camera.currency))
+                    Text(camera.price, format: .currency(code: camera.currency.rawValue))
                 }
                 
                 HStack {

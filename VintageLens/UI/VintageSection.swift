@@ -11,7 +11,7 @@ struct VintageSection: View {
     
     @Environment(DiscoverCoordinator.self) var coordinator
     
-    let vintage: VintageResponse
+    let vintage: CameraSection
     
     var body: some View {
         Group {

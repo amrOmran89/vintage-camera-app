@@ -9,14 +9,14 @@ import Foundation
 
 class FavoriteApiClient {
     
-    private(set) var favoriteList: [Vintage] = []
+    private(set) var favoriteList: [Camera] = []
     
     
-    func addToFavorites(vintage: Vintage) {
-        favoriteList.append(vintage)
+    func addToFavorites(camera: Camera) {
+        favoriteList.append(camera)
     }
     
-    func removeFromFavorites(vintage: Vintage) {
+    func removeFromFavorites(vintage: Camera) {
         favoriteList.removeAll { $0.id == vintage.id }
     }
 }

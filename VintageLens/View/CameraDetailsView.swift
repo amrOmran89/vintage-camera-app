@@ -16,7 +16,7 @@ struct CameraDetailsView: View {
     @State private var suggestPrice = ""
     @State private var showLogin: Bool = false
     
-    let camera: Vintage
+    let camera: Camera
     
     var body: some View {
         VStack(spacing: 0) {
@@ -131,7 +131,7 @@ struct CameraDetailsView: View {
                     
                     // MARK: Price & Shipping
                     VStack(alignment: .leading, spacing: 8) {
-                        Text(camera.price, format: .currency(code: camera.currency))
+                        Text(camera.price, format: .currency(code: camera.currency.rawValue))
                             .font(.title2)
                             .fontWeight(.bold)
                         

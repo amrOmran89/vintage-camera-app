@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DSLRCardView: View {
-    let dslr: DSLR
+    let dslr: Camera
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {

@@ -14,19 +14,19 @@ class VintageApiClient {
         self.client = client
     }
     
-    func getVintageShortList() async throws -> VintageResponse {
+    func getVintageSection() async throws -> CameraSection {
         guard let url = URL(string: BuildConfig.baseUrl + "/vintages") else {
             throw ApiError.invalidURL
         }
-        let response: VintageResponse = try await client.fetchData(url: url)
+        let response: CameraSection = try await client.fetchData(url: url)
         return response
     }
     
-    func getAll() async throws -> [Vintage] {
+    func getAll() async throws -> [Camera] {
         guard let url = URL(string: BuildConfig.baseUrl + "/vintages/all") else {
             throw ApiError.invalidURL
         }
-        let response: [Vintage] = try await client.fetchData(url: url)
+        let response: [Camera] = try await client.fetchData(url: url)
         return response
     }
 }

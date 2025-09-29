@@ -11,7 +11,7 @@ import SwiftUI
 struct CheckoutView: View {
     
     @Environment(DiscoverCoordinator.self) private var coordinator
-    let camera: Vintage
+    let camera: Camera
     
     @State private var shippingAddress = "John Doe\n123 Main St\nBerlin, Germany"
     @State private var paymentMethod = "Credit Card"
@@ -43,7 +43,7 @@ struct CheckoutView: View {
 
                             }
                             
-                            Text(camera.price, format: .currency(code: camera.currency))
+                            Text(camera.price, format: .currency(code: camera.currency.rawValue))
                                 .foregroundColor(.secondary)
                             
                         }
@@ -94,7 +94,7 @@ struct CheckoutView: View {
                             .font(.title2)
                             .fontWeight(.bold)
                         Spacer()
-                        Text(camera.price, format: .currency(code: camera.currency))
+                        Text(camera.price, format: .currency(code: camera.currency.rawValue))
                             .font(.title2)
                             .fontWeight(.bold)
                     }

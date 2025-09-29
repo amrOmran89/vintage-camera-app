@@ -13,9 +13,9 @@ class DiscoverCoordinator {
     var path: [Screens] = []
     
     enum Screens: Hashable {
-        case details(Vintage)
-        case checkout(Vintage)
-        case thankYou(Vintage)
+        case details(Camera)
+        case checkout(Camera)
+        case thankYou(Camera)
         case vintageOverview
         case brandsOverview
         case lensesOverview
