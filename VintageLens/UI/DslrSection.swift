@@ -16,7 +16,7 @@ struct DslrSection: View {
     var body: some View {
         Group {
             HeaderTitle(text: dslr.title) {
-                
+                coordinator.push(.dslrOverview)
             }
             .padding(.top)
             

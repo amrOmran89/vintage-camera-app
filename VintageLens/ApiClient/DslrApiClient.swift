@@ -14,11 +14,19 @@ class DslrApiClient {
         self.client = client
     }
     
-    func getDslr() async throws -> CameraSection {
-        guard let url = URL(string: BuildConfig.baseUrl + "/dslrs") else {
+    func getDslrSection() async throws -> CameraSection {
+        guard let url = URL(string: BuildConfig.baseUrl + "/dslr/section") else {
             throw ApiError.invalidURL
         }
         let response: CameraSection = try await client.fetchData(url: url)
+        return response
+    }
+    
+    func getAllCameras() async throws -> [Camera] {
+        guard let url = URL(string: BuildConfig.baseUrl + "/dslr/all") else {
+            throw ApiError.invalidURL
+        }
+        let response: [Camera] = try await client.fetchData(url: url)
         return response
     }
 }

@@ -12,7 +12,8 @@ struct VintageLensApp: App {
     
     @State private var discoveryCoordinator = DiscoverCoordinator()
     @State private var authentication = AuthenticationService()
-    
+    @State var favoriteViewModel = FavoriteViewModel()
+
     var body: some Scene {
         WindowGroup {
             TabView {
@@ -29,6 +30,7 @@ struct VintageLensApp: App {
                 Tab("Favorites", systemImage: "heart") {
                     FavoriteView()
                 }
+                .badge(favoriteViewModel.badgeCount)
                 
                 Tab("Sell", systemImage: "tag") {
                     SellView()
@@ -46,6 +48,7 @@ struct VintageLensApp: App {
             }
             .tabViewStyle(.tabBarOnly)
             .environment(authentication)
+            .environment(favoriteViewModel)
         }
     }
 }

@@ -19,6 +19,8 @@ class DiscoverCoordinator {
         case vintageOverview
         case brandsOverview
         case lensesOverview
+        case dslrOverview
+        
     }
     
     func push(_ screen: Screens) {
@@ -48,6 +50,8 @@ class DiscoverCoordinator {
             BrandsOverView()
         case .lensesOverview:
             LensesOverview()
+        case .dslrOverview:
+            DSLRsOverview()
         }
     }
 }

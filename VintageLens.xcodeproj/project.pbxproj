@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB08AC142E85319600B92D92 /* BrandsOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB08AC132E85319600B92D92 /* BrandsOverView.swift */; };
+		FB3A8B602E8BBB7F00AA0AC5 /* ResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A8B5F2E8BBB7F00AA0AC5 /* ResponseBody.swift */; };
 		FB3FCB392E81D6D900064950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB3FCB312E81D6D900064950 /* Assets.xcassets */; };
 		FB3FCB3A2E81D6D900064950 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3FCB322E81D6D900064950 /* DiscoverView.swift */; };
 		FB3FCB3B2E81D6D900064950 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3FCB332E81D6D900064950 /* FavoriteView.swift */; };
@@ -44,6 +45,8 @@
 		FBBB11852E82C39B00DC9FEC /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB11842E82C39B00DC9FEC /* CheckoutView.swift */; };
 		FBBB11882E82C42300DC9FEC /* OrderConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB11872E82C42300DC9FEC /* OrderConfirmationView.swift */; };
 		FBC84F922E842DF000278CE6 /* VintageOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC84F912E842DF000278CE6 /* VintageOverview.swift */; };
+		FBCCE9D22E8AA7050032E763 /* DSLRsOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCCE9D12E8AA7050032E763 /* DSLRsOverview.swift */; };
+		FBCCE9DA2E8AB4FC0032E763 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCCE9D92E8AB4FC0032E763 /* Favorite.swift */; };
 		FBEF86C72E83C9FB00F164BB /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEF86C62E83C9FB00F164BB /* ApiClient.swift */; };
 		FBEF86C92E83CC3300F164BB /* Dev.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FBEF86C82E83CC3300F164BB /* Dev.xcconfig */; };
 		FBEF86CC2E83CCD100F164BB /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEF86CB2E83CCD100F164BB /* BuildConfig.swift */; };
@@ -68,6 +71,7 @@
 
 /* Begin PBXFileReference section */
 		FB08AC132E85319600B92D92 /* BrandsOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsOverView.swift; sourceTree = "<group>"; };
+		FB3A8B5F2E8BBB7F00AA0AC5 /* ResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBody.swift; sourceTree = "<group>"; };
 		FB3FCAFD2E81CCD700064950 /* VintageLens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VintageLens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3FCB0A2E81CCD800064950 /* VintageLensTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VintageLensTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3FCB142E81CCD800064950 /* VintageLensUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VintageLensUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +111,8 @@
 		FBBB11842E82C39B00DC9FEC /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		FBBB11872E82C42300DC9FEC /* OrderConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationView.swift; sourceTree = "<group>"; };
 		FBC84F912E842DF000278CE6 /* VintageOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageOverview.swift; sourceTree = "<group>"; };
+		FBCCE9D12E8AA7050032E763 /* DSLRsOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLRsOverview.swift; sourceTree = "<group>"; };
+		FBCCE9D92E8AB4FC0032E763 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		FBEF86C62E83C9FB00F164BB /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		FBEF86C82E83CC3300F164BB /* Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Dev.xcconfig; sourceTree = "<group>"; };
 		FBEF86CA2E83CCA100F164BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -234,6 +240,7 @@
 				FBC84F912E842DF000278CE6 /* VintageOverview.swift */,
 				FB08AC132E85319600B92D92 /* BrandsOverView.swift */,
 				FB41E0332E85385300F57F25 /* LensesOverview.swift */,
+				FBCCE9D12E8AA7050032E763 /* DSLRsOverview.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -247,6 +254,8 @@
 				FB3FCB582E81DBCA00064950 /* DSLR.swift */,
 				FB41E0352E853B7B00F57F25 /* Seller.swift */,
 				FB5047232E8A640E00016A9D /* Order.swift */,
+				FBCCE9D92E8AB4FC0032E763 /* Favorite.swift */,
+				FB3A8B5F2E8BBB7F00AA0AC5 /* ResponseBody.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -426,12 +435,15 @@
 				FB5047282E8A645B00016A9D /* CheckoutApiClient.swift in Sources */,
 				FB5047262E8A643E00016A9D /* Customer.swift in Sources */,
 				FB3FCB3C2E81D6D900064950 /* ProfileView.swift in Sources */,
+				FB3A8B602E8BBB7F00AA0AC5 /* ResponseBody.swift in Sources */,
 				FBAB36952E841BAC00F31E5B /* VintageSection.swift in Sources */,
+				FBCCE9DA2E8AB4FC0032E763 /* Favorite.swift in Sources */,
 				FBAB369B2E841D8900F31E5B /* LensesSection.swift in Sources */,
 				FB72ADFE2E82BC0600A1E523 /* FavoriteApiClient.swift in Sources */,
 				FB3FCB4F2E81D8BB00064950 /* LensCardView.swift in Sources */,
 				FB72ADFC2E82B77600A1E523 /* SellView.swift in Sources */,
 				FB3FCB592E81DBCA00064950 /* DSLR.swift in Sources */,
+				FBCCE9D22E8AA7050032E763 /* DSLRsOverview.swift in Sources */,
 				FB3FCB3D2E81D6D900064950 /* SearchView.swift in Sources */,
 				FB3FCB5F2E81DE6E00064950 /* Brand.swift in Sources */,
 				FB5047242E8A640E00016A9D /* Order.swift in Sources */,

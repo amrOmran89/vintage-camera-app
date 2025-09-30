@@ -135,7 +135,7 @@ class DiscoverViewModel {
     
     func getDslr() async {
         do {
-            let result = try await DslrApiClient(client: ApiClient()).getDslr()
+            let result = try await DslrApiClient(client: ApiClient()).getDslrSection()
             dslr = result
             self.error = nil
         } catch {

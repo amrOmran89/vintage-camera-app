@@ -11,7 +11,9 @@ struct CameraDetailsView: View {
     
     @Environment(DiscoverCoordinator.self) var coordinator
     @Environment(AuthenticationService.self) var authentication
+    @Environment(FavoriteViewModel.self) var favoriteViewModel
     
+    @State private var viewModel = CameraDetailsViewModel()
     @State private var showAlert = false
     @State private var suggestPrice = ""
     @State private var showLogin: Bool = false
@@ -31,11 +33,23 @@ struct CameraDetailsView: View {
                         .cornerRadius(16)
                         .clipped()
                     
-                    // MARK: Views & Title
-                    Label("811 views in 48 hours", systemImage: "flame")
-                        .foregroundColor(.red)
-                        .font(.caption)
-                    
+                    HStack {
+                        // MARK: Views & Title
+                        Label("811 views in 48 hours", systemImage: "flame")
+                            .foregroundColor(.red)
+                            .font(.caption)
+                        
+                        Button {
+                            Task {
+                                let favorite = Favorite(productId: camera.id, userId: 1)
+                                await favoriteViewModel.addOrRemoveFromFavorite(favorite: favorite)
+                                await viewModel.getFavorite(userId: 1, productId: camera.id)
+                            }
+                        } label: {
+                            Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
+                        }
+
+                    }
                     HStack(alignment: .center) {
                         Text(camera.brand)
                             .font(.title)
@@ -194,6 +208,26 @@ struct CameraDetailsView: View {
         }
         .sheet(isPresented: $showLogin) {
             LoginView()
+        }
+        .task {
+            await viewModel.getFavorite(userId: 1, productId: camera.id)
+        }
+    }
+}
+
+@Observable
+class CameraDetailsViewModel {
+    
+    var isFavorite: Bool = false
+    
+    func getFavorite(userId: Int, productId: Int) async {
+        do {
+            let favoriteList = try await FavoriteApiClient(client: .init()).getAllFavorites(userId: userId)
+            let doesContain = favoriteList.contains(where: { $0.productId == productId })
+            
+            isFavorite = doesContain
+        } catch {
+            print(error)
         }
     }
 }

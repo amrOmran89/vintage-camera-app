@@ -36,7 +36,7 @@ struct ProfileView: View {
             }
             
             Section {
-                Label("Buy", systemImage: "cart")
+                Label("My orders", systemImage: "bag")
                     .padding(.bottom, 8)
                 Label("Messages", systemImage: "envelope")
                     .padding(.bottom, 8)
